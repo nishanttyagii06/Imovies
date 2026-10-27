@@ -64,8 +64,8 @@ const HomePage = () => {
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-2xl space-y-4">
               <div className="flex items-center gap-2">
-                <span className="px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-brand-600/30 text-brand-400 border border-brand-500/40 backdrop-blur-md flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-brand-400" />
+                <span className="px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-[#8B5CF6]/20 text-[#A78BFA] border border-[#8B5CF6]/40 backdrop-blur-md flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-[#A78BFA]" />
                   Trending Blockbuster
                 </span>
                 <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-white/10 text-slate-200">
@@ -90,13 +90,13 @@ const HomePage = () => {
                 <span>•</span>
                 <span>{activeMovie.language}</span>
                 <span>•</span>
-                <span className="text-brand-400">{activeMovie.genres?.join(', ')}</span>
+                <span className="text-[#A78BFA] font-semibold">{activeMovie.genres?.join(', ')}</span>
               </div>
 
               <div className="pt-4 flex items-center gap-4">
                 <Link
                   to={`/shows/${activeMovie._id}`}
-                  className="px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-brand-600 to-rose-600 hover:from-brand-500 hover:to-rose-500 shadow-xl shadow-brand-900/40 transition transform hover:-translate-y-0.5 active:scale-95"
+                  className="px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-[#8B5CF6] hover:bg-[#A78BFA] shadow-xl shadow-[#8B5CF6]/30 transition transform hover:-translate-y-0.5 active:scale-95"
                 >
                   Book Tickets Now
                 </Link>
@@ -119,7 +119,7 @@ const HomePage = () => {
                     onClick={() => setActiveHeroIndex(idx)}
                     className={`relative w-16 h-24 rounded-lg overflow-hidden border-2 transition-all shrink-0 ${
                       activeHeroIndex === idx
-                        ? 'border-brand-500 scale-105 shadow-lg shadow-brand-500/40 ring-2 ring-brand-500/40'
+                        ? 'border-[#8B5CF6] scale-105 shadow-lg shadow-[#8B5CF6]/40 ring-2 ring-[#8B5CF6]/40'
                         : 'border-transparent opacity-60 hover:opacity-100'
                     }`}
                   >
@@ -136,7 +136,7 @@ const HomePage = () => {
       {/* 2. SEARCH & GENRE PILL BAR */}
       {/* ==================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-4 sm:p-6 rounded-2xl bg-cinema-card border border-cinema-border shadow-xl space-y-4">
+        <div className="p-4 sm:p-6 rounded-2xl bg-[#171126] border border-[#302343] shadow-xl space-y-4">
           <form onSubmit={handleSearchSubmit} className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
             <input
@@ -144,11 +144,11 @@ const HomePage = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search movies by title, cast, or director..."
-              className="w-full pl-12 pr-28 py-3.5 rounded-xl bg-slate-900/90 border border-cinema-border text-sm text-white placeholder-slate-400 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition"
+              className="w-full pl-12 pr-28 py-3.5 rounded-xl bg-slate-900/90 border border-[#302343] text-sm text-[#F5F3FF] placeholder-slate-400 focus:outline-none focus:border-[#8B5CF6] focus:ring-1 focus:ring-[#8B5CF6] transition"
             />
             <button
               type="submit"
-              className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-xs font-bold text-white transition"
+              className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-2 rounded-lg bg-[#8B5CF6] hover:bg-[#A78BFA] text-xs font-bold text-white transition shadow-sm shadow-[#8B5CF6]/30"
             >
               Search
             </button>
@@ -157,13 +157,13 @@ const HomePage = () => {
           {/* Genre filter tags */}
           <div className="flex items-center gap-2 overflow-x-auto pt-2 pb-1 scrollbar-none">
             <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider shrink-0 mr-1 flex items-center gap-1">
-              <Compass className="w-3.5 h-3.5 text-brand-500" /> Genres:
+              <Compass className="w-3.5 h-3.5 text-[#8B5CF6]" /> Genres:
             </span>
             {genresList.map((g) => (
               <button
                 key={g}
                 onClick={() => navigate(g === 'All' ? '/movies' : `/movies?genre=${g}`)}
-                className="px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-800/80 hover:bg-brand-600/30 hover:text-brand-300 border border-slate-700/60 text-slate-300 transition shrink-0"
+                className="px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-800/80 hover:bg-[#8B5CF6]/20 hover:text-[#C4B5FD] hover:border-[#8B5CF6]/50 border border-[#302343] text-slate-300 transition shrink-0"
               >
                 {g}
               </button>
@@ -183,7 +183,7 @@ const HomePage = () => {
           </div>
           <Link
             to="/movies?status=now_showing"
-            className="flex items-center gap-1 text-xs font-bold text-brand-400 hover:text-brand-300 transition"
+            className="flex items-center gap-1 text-xs font-bold text-[#A78BFA] hover:text-[#C4B5FD] transition"
           >
             <span>View All</span>
             <ChevronRight className="w-4 h-4" />
@@ -191,13 +191,13 @@ const HomePage = () => {
         </div>
 
         {loading ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
-            {[...Array(4)].map((_, i) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4 sm:gap-5">
+            {[...Array(5)].map((_, i) => (
               <MovieCardSkeleton key={i} />
             ))}
           </div>
         ) : nowShowing.length > 0 ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4 sm:gap-5">
             {nowShowing.map((movie) => (
               <MovieCard key={movie._id} movie={movie} />
             ))}
@@ -220,7 +220,7 @@ const HomePage = () => {
           </div>
           <Link
             to="/movies?status=coming_soon"
-            className="flex items-center gap-1 text-xs font-bold text-brand-400 hover:text-brand-300 transition"
+            className="flex items-center gap-1 text-xs font-bold text-[#A78BFA] hover:text-[#C4B5FD] transition"
           >
             <span>View All</span>
             <ChevronRight className="w-4 h-4" />
@@ -228,13 +228,13 @@ const HomePage = () => {
         </div>
 
         {loading ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
-            {[...Array(4)].map((_, i) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4 sm:gap-5">
+            {[...Array(5)].map((_, i) => (
               <MovieCardSkeleton key={i} />
             ))}
           </div>
         ) : comingSoon.length > 0 ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4 sm:gap-5">
             {comingSoon.map((movie) => (
               <MovieCard key={movie._id} movie={movie} />
             ))}

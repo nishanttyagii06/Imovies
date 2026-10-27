@@ -90,8 +90,11 @@ const movieSchema = new mongoose.Schema(
   }
 );
 
-// Search indexes
-movieSchema.index({ title: 'text', description: 'text', director: 'text' });
+// Search indexes (language_override: 'none' avoids conflict with movie.language field)
+movieSchema.index(
+  { title: 'text', description: 'text', director: 'text' },
+  { language_override: 'none' }
+);
 
 const Movie = mongoose.models.Movie || mongoose.model('Movie', movieSchema);
 module.exports = Movie;

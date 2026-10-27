@@ -2,9 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-main: #0B0814;
+  --bg-card: #171126;
+  --bg-elevated: #201735;
+  --primary-violet: #8B5CF6;
+  --hover-violet: #A78BFA;
+  --lavender: #C4B5FD;
+  --border-violet: #302343;
+  --text-primary: #F5F3FF;
+}
+
 @layer base {
   body {
-    @apply bg-[#080b12] text-slate-100 font-sans;
+    background-color: #0B0814;
+    color: #F5F3FF;
+    @apply font-sans selection:bg-brand-500 selection:text-white;
   }
 }
 
@@ -15,23 +28,24 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #090b10;
+  background: #0B0814;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e2638;
+  background: #302343;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2e3b56;
+  background: #4A3668;
 }
 
-/* Cinema glow utilities */
-.glow-brand {
-  box-shadow: 0 0 25px -5px rgba(225, 29, 72, 0.4);
+/* Cinema glow utilities with violet/purple */
+.glow-brand,
+.glow-violet {
+  box-shadow: 0 0 20px -3px rgba(139, 92, 246, 0.4);
 }
 
 .glow-screen {
-  box-shadow: 0 0 40px 5px rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 40px 5px rgba(167, 139, 250, 0.4);
 }

@@ -58,6 +58,7 @@ const seedData = async () => {
     });
 
     console.log('Seeding Movies...');
+    await Movie.syncIndexes();
     const movies = await Movie.create([
       {
         title: 'Dune: Part Two',
@@ -126,67 +127,73 @@ const seedData = async () => {
         ],
       },
       {
-        title: 'Spider-Man: Across the Spider-Verse',
-        description: 'Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence.',
-        genres: ['Animation', 'Action', 'Adventure'],
-        duration: 140,
-        language: 'English',
-        releaseDate: new Date('2023-06-02'),
-        posterUrl: 'https://images.unsplash.com/photo-1635805737707-575885ab0820?w=800&auto=format&fit=crop&q=80',
-        bannerUrl: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=1600&auto=format&fit=crop&q=80',
-        trailerUrl: 'https://www.youtube.com/watch?v=cqGjhVJWtEg',
-        rating: 4.7,
-        ratingCount: 1650,
-        certificate: 'PG',
-        status: 'now_showing',
-        isFeatured: false,
-        director: 'Joaquim Dos Santos, Kemp Powers',
-        cast: [
-          { name: 'Shameik Moore', role: 'Miles Morales' },
-          { name: 'Hailee Steinfeld', role: 'Gwen Stacy' },
-        ],
-      },
-      {
-        title: 'Gladiator II',
-        description: 'Years after witnessing the death of Maximus at the hands of his uncle, Lucius must enter the Colosseum after the powerful emperors of Rome conquer his home.',
+        title: 'RRR',
+        description: 'A fearless revolutionary and an officer in the British force, who once shared a deep bond, decide to join forces and chart out an inspirational path of freedom against the despotic rulers.',
         genres: ['Action', 'Drama', 'Adventure'],
-        duration: 148,
-        language: 'English',
-        releaseDate: new Date('2024-11-22'),
-        posterUrl: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=800&auto=format&fit=crop&q=80',
-        bannerUrl: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1600&auto=format&fit=crop&q=80',
-        trailerUrl: 'https://www.youtube.com/watch?v=4rgYUipGJNo',
-        rating: 0,
-        ratingCount: 0,
-        certificate: 'R',
-        status: 'coming_soon',
-        isFeatured: false,
-        director: 'Ridley Scott',
+        duration: 187,
+        language: 'Hindi',
+        releaseDate: new Date('2022-03-25'),
+        posterUrl: 'https://image.tmdb.org/t/p/w780/wE0I6efAW4cDDmZQWtwZMOW44EJ.jpg',
+        bannerUrl: 'https://image.tmdb.org/t/p/w1280/i0Y0wP8H6SRgjr6QmuwbtQbS24D.jpg',
+        trailerUrl: 'https://www.youtube.com/watch?v=f_vbAtFSEc0',
+        rating: 4.9,
+        ratingCount: 3450,
+        certificate: 'U/A',
+        status: 'now_showing',
+        isFeatured: true,
+        director: 'S. S. Rajamouli',
         cast: [
-          { name: 'Paul Mescal', role: 'Lucius' },
-          { name: 'Pedro Pascal', role: 'Marcus Acacius' },
-          { name: 'Denzel Washington', role: 'Macrinus' },
+          { name: 'N. T. Rama Rao Jr.', role: 'Komaram Bheem' },
+          { name: 'Ram Charan', role: 'Alluri Sitarama Raju' },
+          { name: 'Alia Bhatt', role: 'Sita' },
+          { name: 'Ajay Devgn', role: 'Venkata Rama Raju' },
         ],
       },
       {
-        title: 'Avatar: Fire and Ash',
-        description: 'Jake Sully and Neytiri encounter a new, aggressive volcanic Na\'vi tribe known as the Ash People on Pandora.',
-        genres: ['Sci-Fi', 'Action', 'Fantasy'],
-        duration: 190,
-        language: 'English',
-        releaseDate: new Date('2025-12-19'),
-        posterUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80',
-        bannerUrl: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1600&auto=format&fit=crop&q=80',
-        trailerUrl: 'https://www.youtube.com/watch?v=d9MyW72ELq0',
+        title: 'Baahubali: The Beginning',
+        description: 'In the kingdom of Mahishmati, a young man discovers his royal heritage and must confront his past to claim his rightful place on the throne.',
+        genres: ['Action', 'Drama', 'Fantasy'],
+        duration: 159,
+        language: 'Hindi',
+        releaseDate: new Date('2015-07-10'),
+        posterUrl: 'https://image.tmdb.org/t/p/w780/j94lTdIjmEqfwJuQ96pCqNxm2HU.jpg',
+        bannerUrl: 'https://image.tmdb.org/t/p/w1280/G5dEpF27ooDgua6nnXjGEstiR7.jpg',
+        trailerUrl: 'https://www.youtube.com/watch?v=sOEg_YZQsTI',
+        rating: 4.8,
+        ratingCount: 2980,
+        certificate: 'U/A',
+        status: 'now_showing',
+        isFeatured: true,
+        director: 'S. S. Rajamouli',
+        cast: [
+          { name: 'Prabhas', role: 'Amarendra & Mahendra Baahubali' },
+          { name: 'Rana Daggubati', role: 'Bhallaladeva' },
+          { name: 'Anushka Shetty', role: 'Devasena' },
+          { name: 'Tamannaah Bhatia', role: 'Avanthika' },
+        ],
+      },
+      {
+        title: 'Dhurandhar',
+        description: 'A gripping Hindi spy action-thriller following an elite undercover operation taking on high-stakes national security threats.',
+        genres: ['Action', 'Thriller', 'Crime'],
+        duration: 155,
+        language: 'Hindi',
+        releaseDate: new Date('2025-12-05'),
+        posterUrl: 'https://image.tmdb.org/t/p/w780/8FHOtUpNIk5ZPEay2N2EY5lrxkv.jpg',
+        bannerUrl: 'https://image.tmdb.org/t/p/w1280/snYOXem8pUGOffnLbbGq4aB1pg4.jpg',
+        trailerUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         rating: 0,
         ratingCount: 0,
-        certificate: 'PG-13',
+        certificate: 'U/A',
         status: 'coming_soon',
         isFeatured: false,
-        director: 'James Cameron',
+        director: 'Aditya Dhar',
         cast: [
-          { name: 'Sam Worthington', role: 'Jake Sully' },
-          { name: 'Zoe Saldana', role: 'Neytiri' },
+          { name: 'Ranveer Singh', role: 'Hamza Ali Mazari' },
+          { name: 'Akshaye Khanna', role: 'Rehman Dakait' },
+          { name: 'Sanjay Dutt', role: 'SP Chaudhary Aslam' },
+          { name: 'Arjun Rampal', role: 'Major Iqbal' },
+          { name: 'R. Madhavan', role: 'Ajay Sanyal' },
         ],
       },
     ]);
@@ -332,9 +339,10 @@ const seedData = async () => {
         const screen = theatre.screens[0];
         const pricing = { vip: 450, premium: 320, standard: 220 };
 
-        showtimes.forEach((time) => {
-          // Select movie: alternate between Dune 2 and Oppenheimer
-          const movie = time === '10:30 AM' || time === '06:30 PM' ? movies[0] : movies[1];
+        showtimes.forEach((time, tIdx) => {
+          // Alternate across all Now Showing titles (Dune 2, Oppenheimer, Interstellar, RRR, Baahubali)
+          const nowShowingList = [movies[0], movies[1], movies[2], movies[3], movies[4]];
+          const movie = nowShowingList[(dayOffset + tIdx) % nowShowingList.length];
 
           showsToCreate.push({
             movie: movie._id,

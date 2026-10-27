@@ -38,7 +38,7 @@ const MoviesPage = () => {
         if (status !== 'all') queryParams.set('status', status);
         queryParams.set('sort', sort);
         queryParams.set('page', page);
-        queryParams.set('limit', 12);
+        queryParams.set('limit', 15);
 
         const res = await api.get(`/movies?${queryParams.toString()}`);
         if (res.data.success) {
@@ -76,14 +76,14 @@ const MoviesPage = () => {
             Browse through latest theatrical releases, filter by your favorite genres, and find showtimes.
           </p>
         </div>
-        <div className="text-xs font-semibold text-slate-400 bg-cinema-card px-4 py-2 rounded-xl border border-cinema-border self-start md:self-auto">
+        <div className="text-xs font-semibold text-slate-400 bg-[#171126] px-4 py-2 rounded-xl border border-[#302343] self-start md:self-auto">
           Showing <span className="text-white font-bold">{movies.length}</span> of{' '}
-          <span className="text-brand-400 font-bold">{pagination.total}</span> titles
+          <span className="text-[#A78BFA] font-bold">{pagination.total}</span> titles
         </div>
       </div>
 
       {/* Filter Bar */}
-      <div className="p-5 rounded-2xl bg-cinema-card border border-cinema-border space-y-4">
+      <div className="p-5 rounded-2xl bg-[#171126] border border-[#302343] space-y-4 shadow-xl">
         {/* Top Search & Sort Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative md:col-span-2">
@@ -93,7 +93,7 @@ const MoviesPage = () => {
               value={search}
               onChange={(e) => updateParam('search', e.target.value)}
               placeholder="Search by movie title, cast, or director..."
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900 border border-cinema-border text-sm text-white focus:outline-none focus:border-brand-500"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900 border border-[#302343] text-sm text-[#F5F3FF] focus:outline-none focus:border-[#8B5CF6] focus:ring-1 focus:ring-[#8B5CF6]"
             />
           </div>
 
@@ -102,7 +102,7 @@ const MoviesPage = () => {
             <select
               value={sort}
               onChange={(e) => updateParam('sort', e.target.value)}
-              className="w-full px-3 py-2.5 rounded-xl bg-slate-900 border border-cinema-border text-xs text-slate-200 focus:outline-none focus:border-brand-500 cursor-pointer"
+              className="w-full px-3 py-2.5 rounded-xl bg-slate-900 border border-[#302343] text-xs text-slate-200 focus:outline-none focus:border-[#8B5CF6] cursor-pointer"
             >
               <option value="-rating">Top Rated First</option>
               <option value="-releaseDate">Newest Releases</option>
@@ -114,18 +114,18 @@ const MoviesPage = () => {
         </div>
 
         {/* Filters Row */}
-        <div className="pt-2 border-t border-cinema-border/60 flex flex-wrap items-center gap-4 text-xs">
+        <div className="pt-2 border-t border-[#302343]/60 flex flex-wrap items-center gap-4 text-xs">
           {/* Status Filter */}
           <div className="flex items-center gap-1.5">
             <span className="text-slate-400 font-semibold">Status:</span>
-            <div className="flex rounded-lg bg-slate-900 p-0.5 border border-cinema-border">
+            <div className="flex rounded-lg bg-slate-900 p-0.5 border border-[#302343]">
               {statuses.map((s) => (
                 <button
                   key={s.value}
                   onClick={() => updateParam('status', s.value)}
                   className={`px-3 py-1 rounded-md text-[11px] font-medium transition ${
                     status === s.value
-                      ? 'bg-brand-600 text-white font-bold'
+                      ? 'bg-[#8B5CF6] text-white font-bold shadow-sm shadow-[#8B5CF6]/40'
                       : 'text-slate-400 hover:text-white'
                   }`}
                 >
@@ -141,7 +141,7 @@ const MoviesPage = () => {
             <select
               value={genre}
               onChange={(e) => updateParam('genre', e.target.value)}
-              className="px-3 py-1.5 rounded-lg bg-slate-900 border border-cinema-border text-slate-200 text-xs focus:outline-none cursor-pointer"
+              className="px-3 py-1.5 rounded-lg bg-slate-900 border border-[#302343] text-slate-200 text-xs focus:outline-none focus:border-[#8B5CF6] cursor-pointer"
             >
               {genres.map((g) => (
                 <option key={g} value={g}>
@@ -157,7 +157,7 @@ const MoviesPage = () => {
             <select
               value={language}
               onChange={(e) => updateParam('language', e.target.value)}
-              className="px-3 py-1.5 rounded-lg bg-slate-900 border border-cinema-border text-slate-200 text-xs focus:outline-none cursor-pointer"
+              className="px-3 py-1.5 rounded-lg bg-slate-900 border border-[#302343] text-slate-200 text-xs focus:outline-none focus:border-[#8B5CF6] cursor-pointer"
             >
               {languages.map((l) => (
                 <option key={l} value={l}>
@@ -171,7 +171,7 @@ const MoviesPage = () => {
           {(search || genre !== 'All' || language !== 'All' || status !== 'all') && (
             <button
               onClick={() => setSearchParams({})}
-              className="text-brand-400 hover:text-brand-300 underline font-semibold ml-auto text-[11px]"
+              className="text-[#A78BFA] hover:text-[#C4B5FD] underline font-semibold ml-auto text-[11px]"
             >
               Reset Filters
             </button>
@@ -181,25 +181,25 @@ const MoviesPage = () => {
 
       {/* Movie Grid */}
       {loading ? (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {[...Array(8)].map((_, i) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4 sm:gap-5">
+          {[...Array(10)].map((_, i) => (
             <MovieCardSkeleton key={i} />
           ))}
         </div>
       ) : movies.length > 0 ? (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4 sm:gap-5">
           {movies.map((movie) => (
             <MovieCard key={movie._id} movie={movie} />
           ))}
         </div>
       ) : (
-        <div className="p-16 rounded-2xl bg-cinema-card border border-cinema-border text-center space-y-4">
+        <div className="p-16 rounded-2xl bg-[#171126] border border-[#302343] text-center space-y-4">
           <p className="text-base text-slate-300 font-medium">
             No movies match your selected search criteria.
           </p>
           <button
             onClick={() => setSearchParams({})}
-            className="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-xs font-bold text-white transition"
+            className="px-4 py-2 rounded-xl bg-[#8B5CF6] hover:bg-[#A78BFA] text-xs font-bold text-white transition shadow-md shadow-[#8B5CF6]/30"
           >
             Clear All Filters
           </button>
@@ -217,8 +217,8 @@ const MoviesPage = () => {
                 onClick={() => updateParam('page', pageNum.toString())}
                 className={`w-9 h-9 rounded-xl text-xs font-bold transition ${
                   page === pageNum
-                    ? 'bg-brand-600 text-white shadow-lg shadow-brand-900/30'
-                    : 'bg-cinema-card border border-cinema-border text-slate-300 hover:bg-slate-800'
+                    ? 'bg-[#8B5CF6] text-white shadow-lg shadow-[#8B5CF6]/40'
+                    : 'bg-[#171126] border border-[#302343] text-slate-300 hover:bg-[#201735]'
                 }`}
               >
                 {pageNum}

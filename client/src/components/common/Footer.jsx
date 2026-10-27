@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Brand Info */}
           <div className="space-y-4 md:col-span-1">
             <Link to="/" className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-700 to-rose-500 flex items-center justify-center shadow-lg shadow-brand-600/30">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-700 via-brand-600 to-brand-400 flex items-center justify-center shadow-lg shadow-brand-600/30">
                 <Film className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold tracking-tight text-white">IMovies</span>

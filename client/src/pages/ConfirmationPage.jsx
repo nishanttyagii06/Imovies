@@ -71,15 +71,15 @@ const ConfirmationPage = () => {
       {/* Ticket Pass Container */}
       <div className="relative rounded-3xl bg-cinema-card border border-cinema-border overflow-hidden shadow-2xl print:shadow-none print:border-black">
         {/* Cinema Brand Header */}
-        <div className="p-6 bg-gradient-to-r from-brand-700 via-rose-600 to-brand-800 text-white flex items-center justify-between">
+        <div className="p-6 bg-gradient-to-r from-brand-800 via-brand-600 to-brand-700 text-white flex items-center justify-between">
           <div>
             <span className="text-xl font-black tracking-tight">IMovies Cinema Pass</span>
-            <p className="text-[11px] text-rose-100 uppercase tracking-widest font-semibold">
+            <p className="text-[11px] text-brand-100 uppercase tracking-widest font-semibold">
               Admit One Per Seat
             </p>
           </div>
           <div className="text-right">
-            <span className="text-[10px] uppercase font-bold text-rose-200">Booking ID</span>
+            <span className="text-[10px] uppercase font-bold text-brand-200">Booking ID</span>
             <p className="text-sm font-mono font-black">{booking.bookingId}</p>
           </div>
         </div>
@@ -176,7 +176,7 @@ const ConfirmationPage = () => {
 
         <Link
           to="/my-bookings"
-          className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-brand-600 to-rose-600 hover:from-brand-500 hover:to-rose-500 text-white font-bold text-xs shadow-lg shadow-brand-900/40 transition flex items-center justify-center gap-2"
+          className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-bold text-xs shadow-lg shadow-brand-900/40 transition flex items-center justify-center gap-2"
         >
           <span>View All My Bookings</span>
           <ArrowRight className="w-4 h-4" />

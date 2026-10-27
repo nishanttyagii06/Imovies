@@ -215,7 +215,7 @@ const SeatSelectionPage = () => {
 
       {/* Seating Layout Area */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        <div className="lg:col-span-3 p-6 sm:p-10 rounded-2xl bg-cinema-card border border-cinema-border flex flex-col items-center overflow-x-auto">
+        <div className="lg:col-span-3 p-6 sm:p-10 rounded-2xl bg-[#171126] border border-[#302343] flex flex-col items-center overflow-x-auto">
           {/* Cinema Curved Screen */}
           <div className="w-full max-w-xl mb-12 flex flex-col items-center">
             <div className="w-full h-2.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent rounded-full shadow-lg shadow-cyan-400/40 glow-screen" />
@@ -250,7 +250,7 @@ const SeatSelectionPage = () => {
                       } else if (isLockedOther) {
                         seatClasses += 'bg-amber-950/60 text-amber-500 border border-amber-500/50 cursor-not-allowed animate-pulse';
                       } else if (isSelected) {
-                        seatClasses += 'bg-brand-600 text-white font-extrabold border-2 border-brand-400 shadow-md shadow-brand-500/50 scale-110';
+                        seatClasses += 'bg-[#8B5CF6] text-white font-extrabold border-2 border-[#A78BFA] shadow-md shadow-[#8B5CF6]/50 scale-110';
                       } else {
                         // Available
                         seatClasses +=
@@ -258,7 +258,7 @@ const SeatSelectionPage = () => {
                             ? 'bg-amber-950/20 text-amber-300 border border-amber-600/50 hover:bg-amber-600 hover:text-white'
                             : seat.tier === 'premium'
                             ? 'bg-indigo-950/20 text-indigo-300 border border-indigo-600/50 hover:bg-indigo-600 hover:text-white'
-                            : 'bg-slate-900 text-slate-300 border border-cinema-border hover:bg-slate-800 hover:text-white';
+                            : 'bg-slate-900 text-slate-300 border border-[#302343] hover:bg-[#8B5CF6]/20 hover:text-white hover:border-[#8B5CF6]/50';
                       }
 
                       return (
@@ -322,7 +322,7 @@ const SeatSelectionPage = () => {
                   {selectedSeats.map((s) => (
                     <span
                       key={s.seatNumber}
-                      className="px-2.5 py-1 rounded-lg text-xs font-bold bg-brand-600/20 text-brand-300 border border-brand-500/30 flex items-center gap-1"
+                      className="px-2.5 py-1 rounded-lg text-xs font-bold bg-[#8B5CF6]/20 text-[#C4B5FD] border border-[#8B5CF6]/40 flex items-center gap-1"
                     >
                       <span>{s.seatNumber}</span>
                       <span className="text-[10px] text-slate-400">(₹{s.price})</span>
@@ -346,7 +346,7 @@ const SeatSelectionPage = () => {
               </div>
               <div className="flex justify-between pt-3 border-t border-slate-800 text-sm font-extrabold text-white">
                 <span>Total Payable</span>
-                <span className="text-brand-400">₹{total}</span>
+                <span className="text-[#A78BFA]">₹{total}</span>
               </div>
             </div>
 
@@ -354,7 +354,7 @@ const SeatSelectionPage = () => {
             <button
               onClick={handleProceedToCheckout}
               disabled={selectedSeats.length === 0 || lockingSeats}
-              className="w-full py-3.5 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-brand-600 to-rose-600 hover:from-brand-500 hover:to-rose-500 shadow-xl shadow-brand-900/40 transition transform active:scale-95 disabled:opacity-40 flex items-center justify-center gap-2"
+              className="w-full py-3.5 rounded-xl font-bold text-xs text-white bg-[#8B5CF6] hover:bg-[#A78BFA] shadow-xl shadow-[#8B5CF6]/30 transition transform active:scale-95 disabled:opacity-40 flex items-center justify-center gap-2"
             >
               {lockingSeats ? (
                 <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />

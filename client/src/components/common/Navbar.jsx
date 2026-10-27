@@ -19,8 +19,8 @@ const Navbar = ({ selectedCity = 'Mumbai', onSelectCity }) => {
   };
 
   const navLinkClass = ({ isActive }) =>
-    `text-sm font-medium transition duration-200 ${
-      isActive ? 'text-brand-500 font-semibold' : 'text-slate-300 hover:text-white'
+    `text-sm font-medium transition duration-200 pb-0.5 ${
+      isActive ? 'text-[#8B5CF6] font-bold border-b-2 border-[#8B5CF6]' : 'text-slate-300 hover:text-[#A78BFA]'
     }`;
 
   const cities = ['Mumbai', 'Delhi NCR', 'Bengaluru', 'Hyderabad'];
@@ -32,11 +32,11 @@ const Navbar = ({ selectedCity = 'Mumbai', onSelectCity }) => {
           {/* Logo & City Selector */}
           <div className="flex items-center gap-6">
             <Link to="/" className="flex items-center gap-2.5 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-700 via-brand-600 to-rose-500 flex items-center justify-center shadow-lg shadow-brand-600/30 group-hover:scale-105 transition-transform duration-200">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#6D28D9] via-[#8B5CF6] to-[#A78BFA] flex items-center justify-center shadow-lg shadow-[#8B5CF6]/30 group-hover:scale-105 transition-transform duration-200">
                 <Film className="w-5 h-5 text-white" />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-tight text-white group-hover:text-brand-400 transition">
+                <span className="text-xl font-bold tracking-tight text-white group-hover:text-[#A78BFA] transition">
                   IMovies
                 </span>
                 <span className="text-[10px] tracking-widest uppercase font-semibold text-slate-400 -mt-1">
@@ -46,8 +46,8 @@ const Navbar = ({ selectedCity = 'Mumbai', onSelectCity }) => {
             </Link>
 
             {/* City selector */}
-            <div className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cinema-card border border-cinema-border/80 text-xs text-slate-300">
-              <MapPin className="w-3.5 h-3.5 text-brand-500" />
+            <div className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cinema-card border border-[#302343] text-xs text-slate-300">
+              <MapPin className="w-3.5 h-3.5 text-[#8B5CF6]" />
               <select
                 value={selectedCity}
                 onChange={(e) => onSelectCity && onSelectCity(e.target.value)}
@@ -99,14 +99,14 @@ const Navbar = ({ selectedCity = 'Mumbai', onSelectCity }) => {
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                   className="flex items-center gap-3 px-3 py-1.5 rounded-xl bg-cinema-card hover:bg-slate-800/80 border border-cinema-border transition focus:outline-none"
                 >
-                  <div className="w-7 h-7 rounded-lg bg-brand-600/20 text-brand-400 flex items-center justify-center font-bold text-xs uppercase border border-brand-500/30">
+                  <div className="w-7 h-7 rounded-lg bg-[#8B5CF6]/20 text-[#C4B5FD] flex items-center justify-center font-bold text-xs uppercase border border-[#8B5CF6]/30">
                     {user.name ? user.name[0] : 'U'}
                   </div>
                   <div className="text-left text-xs">
                     <div className="text-slate-200 font-medium truncate max-w-[100px]">
                       {user.name.split(' ')[0]}
                     </div>
-                    <div className="text-[10px] text-brand-400 font-semibold uppercase">
+                    <div className="text-[10px] text-[#A78BFA] font-semibold uppercase">
                       {user.role}
                     </div>
                   </div>
@@ -180,7 +180,7 @@ const Navbar = ({ selectedCity = 'Mumbai', onSelectCity }) => {
                 </Link>
                 <Link
                   to="/register"
-                  className="px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-brand-600 to-rose-600 hover:from-brand-500 hover:to-rose-500 shadow-md shadow-brand-600/30 transition transform hover:-translate-y-0.5"
+                  className="px-4 py-2 rounded-xl text-xs font-bold text-white bg-[#8B5CF6] hover:bg-[#A78BFA] shadow-md shadow-[#8B5CF6]/30 transition transform hover:-translate-y-0.5 active:scale-95"
                 >
                   Register
                 </Link>

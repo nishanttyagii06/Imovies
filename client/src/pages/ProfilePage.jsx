@@ -48,7 +48,7 @@ const ProfilePage = () => {
       <div className="p-6 sm:p-8 rounded-2xl bg-cinema-card border border-cinema-border space-y-6 shadow-2xl">
         {/* User Card Header */}
         <div className="flex items-center gap-4 pb-6 border-b border-cinema-border/60">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-600 to-rose-600 text-white font-black text-xl flex items-center justify-center shadow-lg shadow-brand-600/30 uppercase">
+          <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-700 via-brand-600 to-brand-400 text-white font-black text-xl flex items-center justify-center shadow-lg shadow-brand-600/30 uppercase">
             {user?.name ? user.name[0] : 'U'}
           </div>
           <div>
@@ -149,7 +149,7 @@ const ProfilePage = () => {
             <button
               type="submit"
               disabled={saving}
-              className="px-6 py-3 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-brand-600 to-rose-600 hover:from-brand-500 hover:to-rose-500 shadow-xl shadow-brand-900/40 transition flex items-center gap-2 disabled:opacity-50"
+              className="px-6 py-3 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 shadow-xl shadow-brand-900/40 transition flex items-center gap-2 disabled:opacity-50"
             >
               {saving ? (
                 <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />

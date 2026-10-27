@@ -112,8 +112,8 @@ const ShowtimesPage = ({ defaultCity = 'Mumbai' }) => {
                 onClick={() => setSelectedDate(item.full)}
                 className={`px-4 py-2.5 rounded-xl flex flex-col items-center justify-center min-w-[70px] transition shrink-0 ${
                   isSelected
-                    ? 'bg-gradient-to-r from-brand-600 to-rose-600 text-white font-bold shadow-lg shadow-brand-900/40'
-                    : 'bg-slate-900/80 text-slate-300 hover:bg-slate-800 border border-slate-800'
+                    ? 'bg-[#8B5CF6] text-white font-bold shadow-lg shadow-[#8B5CF6]/40 ring-1 ring-[#A78BFA]/50'
+                    : 'bg-slate-900/80 text-slate-300 hover:bg-[#201735] border border-[#302343]'
                 }`}
               >
                 <span className="text-[10px] uppercase tracking-wider">{item.day}</span>
@@ -125,8 +125,8 @@ const ShowtimesPage = ({ defaultCity = 'Mumbai' }) => {
         </div>
 
         {/* City Filter */}
-        <div className="flex items-center gap-2 bg-slate-900 px-3.5 py-2.5 rounded-xl border border-cinema-border self-end md:self-auto shrink-0">
-          <MapPin className="w-4 h-4 text-brand-500" />
+        <div className="flex items-center gap-2 bg-slate-900 px-3.5 py-2.5 rounded-xl border border-[#302343] self-end md:self-auto shrink-0">
+          <MapPin className="w-4 h-4 text-[#8B5CF6]" />
           <span className="text-xs text-slate-400">City:</span>
           <select
             value={selectedCity}
@@ -157,10 +157,10 @@ const ShowtimesPage = ({ defaultCity = 'Mumbai' }) => {
           theatres.map((item) => (
             <div
               key={item.theatre._id}
-              className="p-6 rounded-2xl bg-cinema-card border border-cinema-border space-y-5 hover:border-slate-700 transition"
+              className="p-6 rounded-2xl bg-[#171126] border border-[#302343] space-y-5 hover:border-[#8B5CF6]/50 transition"
             >
               {/* Theatre Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-cinema-border/60">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#302343]/60">
                 <div>
                   <div className="flex items-center gap-2">
                     <h3 className="text-base font-bold text-white">{item.theatre.name}</h3>
@@ -190,10 +190,10 @@ const ShowtimesPage = ({ defaultCity = 'Mumbai' }) => {
                   <button
                     key={show._id}
                     onClick={() => navigate(`/booking/${show._id}/seats`)}
-                    className="group relative p-3 rounded-xl bg-slate-900 border border-cinema-border hover:border-brand-500 hover:bg-brand-950/20 transition-all text-left min-w-[130px]"
+                    className="group relative p-3 rounded-xl bg-slate-900 border border-[#302343] hover:border-[#8B5CF6] hover:bg-[#8B5CF6]/10 transition-all text-left min-w-[130px]"
                   >
-                    <div className="flex items-center gap-1.5 text-sm font-black text-white group-hover:text-brand-400">
-                      <Clock className="w-3.5 h-3.5 text-brand-500" />
+                    <div className="flex items-center gap-1.5 text-sm font-black text-white group-hover:text-[#A78BFA]">
+                      <Clock className="w-3.5 h-3.5 text-[#8B5CF6]" />
                       <span>{show.showTime}</span>
                     </div>
 
@@ -211,7 +211,7 @@ const ShowtimesPage = ({ defaultCity = 'Mumbai' }) => {
             </div>
           ))
         ) : (
-          <div className="p-16 rounded-2xl bg-cinema-card border border-cinema-border text-center space-y-3">
+          <div className="p-16 rounded-2xl bg-[#171126] border border-[#302343] text-center space-y-3">
             <Ticket className="w-10 h-10 text-slate-500 mx-auto" />
             <h3 className="text-base font-bold text-white">No Shows Available</h3>
             <p className="text-xs text-slate-400 max-w-sm mx-auto">

@@ -112,7 +112,7 @@ const MovieDetailsPage = () => {
   if (loading) {
     return (
       <div className="min-h-[70vh] flex items-center justify-center">
-        <div className="w-10 h-10 border-4 border-brand-500 border-t-transparent rounded-full animate-spin" />
+        <div className="w-10 h-10 border-4 border-[#8B5CF6] border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -122,7 +122,7 @@ const MovieDetailsPage = () => {
       <div className="max-w-4xl mx-auto px-4 py-20 text-center space-y-4">
         <h2 className="text-2xl font-bold text-white">Movie Not Found</h2>
         <p className="text-sm text-slate-400">The movie you are looking for does not exist or has been removed.</p>
-        <Link to="/movies" className="inline-block px-5 py-2.5 rounded-xl bg-brand-600 text-white font-semibold text-xs">
+        <Link to="/movies" className="inline-block px-5 py-2.5 rounded-xl bg-[#8B5CF6] hover:bg-[#A78BFA] text-white font-semibold text-xs shadow-md shadow-[#8B5CF6]/30 transition">
           Browse All Movies
         </Link>
       </div>
@@ -162,7 +162,7 @@ const MovieDetailsPage = () => {
                   onClick={() => setShowTrailerModal(true)}
                   className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center gap-2 text-white transition backdrop-blur-xs"
                 >
-                  <div className="w-12 h-12 rounded-full bg-brand-600 flex items-center justify-center shadow-lg shadow-brand-600/50">
+                  <div className="w-12 h-12 rounded-full bg-[#8B5CF6] flex items-center justify-center shadow-lg shadow-[#8B5CF6]/50">
                     <Play className="w-5 h-5 fill-white ml-0.5" />
                   </div>
                   <span className="text-xs font-bold uppercase tracking-wider">Play Trailer</span>
@@ -173,7 +173,7 @@ const MovieDetailsPage = () => {
             {/* Details Column */}
             <div className="flex-1 space-y-4 text-center md:text-left">
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5">
-                <span className="px-3 py-1 rounded-md text-xs font-bold uppercase bg-brand-600/30 text-brand-400 border border-brand-500/30">
+                <span className="px-3 py-1 rounded-md text-xs font-bold uppercase bg-[#8B5CF6]/20 text-[#A78BFA] border border-[#8B5CF6]/40">
                   {movie.status === 'now_showing' ? 'Now Showing' : 'Coming Soon'}
                 </span>
                 <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-white/10 text-slate-200">
@@ -201,7 +201,7 @@ const MovieDetailsPage = () => {
                   <span>Released: {new Date(movie.releaseDate).toLocaleDateString()}</span>
                 </div>
                 <span>•</span>
-                <span className="text-brand-400 font-semibold">{movie.language}</span>
+                <span className="text-[#A78BFA] font-semibold">{movie.language}</span>
               </div>
 
               {/* Genre Pills */}
@@ -221,7 +221,7 @@ const MovieDetailsPage = () => {
                 {movie.status === 'now_showing' ? (
                   <Link
                     to={`/shows/${movie._id}`}
-                    className="px-7 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-brand-600 to-rose-600 hover:from-brand-500 hover:to-rose-500 shadow-xl shadow-brand-900/40 transition transform active:scale-95 flex items-center gap-2"
+                    className="px-7 py-3.5 rounded-xl font-bold text-sm text-white bg-[#8B5CF6] hover:bg-[#A78BFA] shadow-xl shadow-[#8B5CF6]/30 transition transform active:scale-95 flex items-center gap-2"
                   >
                     <Ticket className="w-4 h-4" />
                     Book Tickets
@@ -236,11 +236,11 @@ const MovieDetailsPage = () => {
                   onClick={toggleWatchlist}
                   className={`px-5 py-3.5 rounded-xl font-semibold text-xs transition border flex items-center gap-2 ${
                     inWatchlist
-                      ? 'bg-brand-600/30 text-brand-300 border-brand-500/40'
-                      : 'bg-cinema-card text-slate-300 border-cinema-border hover:bg-slate-800'
+                      ? 'bg-[#8B5CF6]/20 text-[#C4B5FD] border-[#8B5CF6]/40'
+                      : 'bg-cinema-card text-slate-300 border-[#302343] hover:bg-slate-800'
                   }`}
                 >
-                  <Bookmark className={`w-4 h-4 ${inWatchlist ? 'fill-brand-400' : ''}`} />
+                  <Bookmark className={`w-4 h-4 ${inWatchlist ? 'fill-[#A78BFA] text-[#A78BFA]' : ''}`} />
                   {inWatchlist ? 'Saved in Watchlist' : 'Add to Watchlist'}
                 </button>
 
@@ -306,7 +306,7 @@ const MovieDetailsPage = () => {
               </div>
               <button
                 onClick={() => setShowReviewModal(true)}
-                className="px-4 py-2 rounded-xl text-xs font-bold bg-brand-600 hover:bg-brand-500 text-white transition flex items-center gap-1.5"
+                className="px-4 py-2 rounded-xl text-xs font-bold bg-[#8B5CF6] hover:bg-[#A78BFA] text-white shadow-md shadow-[#8B5CF6]/30 transition flex items-center gap-1.5"
               >
                 <MessageSquare className="w-3.5 h-3.5" />
                 Write Review
@@ -318,11 +318,11 @@ const MovieDetailsPage = () => {
                 {reviews.map((rev) => (
                   <div
                     key={rev._id}
-                    className="p-5 rounded-2xl bg-cinema-card border border-cinema-border space-y-2.5"
+                    className="p-5 rounded-2xl bg-[#171126] border border-[#302343] space-y-2.5"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2.5">
-                        <div className="w-8 h-8 rounded-full bg-brand-600/20 text-brand-400 font-bold text-xs flex items-center justify-center border border-brand-500/30">
+                        <div className="w-8 h-8 rounded-full bg-[#8B5CF6]/20 text-[#C4B5FD] font-bold text-xs flex items-center justify-center border border-[#8B5CF6]/40">
                           {rev.user?.name ? rev.user.name[0] : 'U'}
                         </div>
                         <div>
@@ -378,7 +378,7 @@ const MovieDetailsPage = () => {
             {movie.status === 'now_showing' && (
               <Link
                 to={`/shows/${movie._id}`}
-                className="w-full py-3.5 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-brand-600 to-rose-600 hover:from-brand-500 hover:to-rose-500 shadow-xl shadow-brand-900/40 text-center block transition"
+                className="w-full py-3.5 rounded-xl font-bold text-xs text-white bg-[#8B5CF6] hover:bg-[#A78BFA] shadow-xl shadow-[#8B5CF6]/30 text-center block transition"
               >
                 Check Theatres & Times
               </Link>
@@ -455,7 +455,7 @@ const MovieDetailsPage = () => {
                   value={myComment}
                   onChange={(e) => setMyComment(e.target.value)}
                   placeholder="What did you think of the performances, plot, sound design, and visuals?"
-                  className="w-full p-3 rounded-xl bg-slate-900 border border-cinema-border text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500"
+                  className="w-full p-3 rounded-xl bg-slate-900 border border-[#302343] text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#8B5CF6]"
                   required
                 />
               </div>
@@ -471,7 +471,7 @@ const MovieDetailsPage = () => {
                 <button
                   type="submit"
                   disabled={submittingReview}
-                  className="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs shadow-md transition disabled:opacity-50"
+                  className="px-5 py-2.5 rounded-xl bg-[#8B5CF6] hover:bg-[#A78BFA] text-white font-bold text-xs shadow-md shadow-[#8B5CF6]/30 transition disabled:opacity-50"
                 >
                   {submittingReview ? 'Submitting...' : 'Post Review'}
                 </button>

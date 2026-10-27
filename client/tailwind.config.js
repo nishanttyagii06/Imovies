@@ -8,28 +8,39 @@ export default {
     extend: {
       colors: {
         brand: {
-          50: '#fff1f2',
-          100: '#ffe4e6',
-          200: '#fecdd3',
-          300: '#fda4af',
-          400: '#fb7185',
-          500: '#f43f5e',
-          600: '#e11d48', // primary cinema red
-          700: '#be123c',
-          800: '#9f1239',
-          900: '#881337',
+          50: '#F5F3FF',   // Primary text
+          100: '#ede9fe',
+          200: '#ddd6fe',
+          300: '#C4B5FD',  // Lavender
+          400: '#A78BFA',  // Hover violet
+          500: '#8B5CF6',  // Primary violet
+          600: '#7C3AED',
+          700: '#6D28D9',
+          800: '#5B21B6',
+          900: '#4C1D95',
+          DEFAULT: '#8B5CF6',
+          hover: '#A78BFA',
+          lavender: '#C4B5FD',
         },
         gold: {
           400: '#fbbf24',
           500: '#f59e0b',
         },
         cinema: {
-          darkest: '#090b10',
-          dark: '#0f141f',
-          card: '#161c2b',
-          border: '#232c42',
-          accent: '#38bdf8'
+          darkest: '#0B0814',  // Main background
+          dark: '#120D20',
+          card: '#171126',     // Card background
+          elevated: '#201735', // Elevated background
+          border: '#302343',   // Subtle violet border
+          accent: '#A78BFA',   // Hover violet
+          primary: '#8B5CF6',  // Primary violet
+          lavender: '#C4B5FD', // Lavender
+          text: '#F5F3FF',     // Primary text
         }
+      },
+      boxShadow: {
+        'violet-glow': '0 0 20px -3px rgba(139, 92, 246, 0.35)',
+        'violet-sm': '0 0 10px -2px rgba(139, 92, 246, 0.25)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

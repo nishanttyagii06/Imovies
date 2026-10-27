@@ -165,8 +165,11 @@ describe('IMovies API Comprehensive Test Suite', () => {
   // ==========================================
   describe('Showtimes, Seat Locks & Concurrency', () => {
     it('should fetch shows for movie and theatre layout', async () => {
-      // Find an active show from DB
-      const existingShow = await Show.findOne({ isActive: true });
+      // Find an active upcoming show with ample lead time (> 2 hours away)
+      const todayStr = new Date().toISOString().split('T')[0];
+      const existingShow =
+        (await Show.findOne({ isActive: true, showDate: { $gt: todayStr } })) ||
+        (await Show.findOne({ isActive: true }));
       expect(existingShow).toBeDefined();
       testShowId = existingShow._id.toString();
       testMovieId = existingShow.movie.toString();
